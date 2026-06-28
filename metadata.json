@@ -1,0 +1,6 @@
+{
+  "name": "Tomaro AI",
+  "description": "An AI-powered tomato quality inspection system that uses Computer Vision to grade tomatoes.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

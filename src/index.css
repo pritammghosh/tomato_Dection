@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: #f3ece4;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f9f5f0;
+  --color-border: #e8ded1;
+  --color-text: #1a1a1a;
+  --color-muted: #7a7369;
+  --color-accent: #ff7f3f;
+  
+  /* Status Colors */
+  --color-success: #2e9e4a;
+  --color-warning: #f59e0b;
+  --color-error: #e03131;
+  --color-ripe: #2e9e4a;
+  --color-unripe: #f59e0b;
+  --color-defective: #e03131;
+}
+
+@layer base {
+  :root {
+    --bg-main: #f3ece4;
+    --bg-panel: rgba(255, 255, 255, 0.4);
+    --bg-panel-heavy: rgba(255, 255, 255, 0.6);
+    --bg-panel-light: rgba(255, 255, 255, 0.2);
+    --border-panel: rgba(255, 255, 255, 0.5);
+    --text-main: #1a1a1a;
+    --text-muted: #7a7369;
+    --btn-bg: #1a1a1a;
+    --btn-text: #ffffff;
+    --accent: #ff7f3f;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+  }
+  
+  .dark {
+    --bg-main: #0a0a0a;
+    --bg-panel: rgba(255, 255, 255, 0.05);
+    --bg-panel-heavy: rgba(255, 255, 255, 0.1);
+    --bg-panel-light: rgba(255, 255, 255, 0.02);
+    --border-panel: rgba(255, 255, 255, 0.1);
+    --text-main: #f5f5f0;
+    --text-muted: #888888;
+    --btn-bg: #ffffff;
+    --btn-text: #1a1a1a;
+    --accent: #ff7f3f;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-[var(--bg-main)] text-[var(--text-main)];
+    overflow-x: hidden;
+  }
+  
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(122, 115, 105, 0.3) transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Global custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(26, 26, 26, 0.1);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(26, 26, 26, 0.2);
+  }
+}
